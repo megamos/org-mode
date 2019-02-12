@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title></title>
+<meta name="author" content="(Marcus Mueller)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="file:///home/megamos/projects/cloned/reveal.js/css/reveal.css"/>
+
+<link rel="stylesheet" href="file:///home/megamos/projects/cloned/reveal.js/css/theme/moon.css" id="theme"/>
+
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'file:///home/megamos/projects/cloned/reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h2 class="author">Marcus Mueller</h2><p class="date">Created: 2019-02-12 Tue 17:43</p>
+</section>
+<section id="table-of-contents">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#/slide-org66331da">1. Organize Yourself with Org-Mode</a></li>
+<li><a href="#/slide-orgca4236e">2. Quick Introduction to used Tools</a>
+<ul>
+<li>
+<ul>
+<li><a href="#/slide-org68c3d28">2.0.1. Emacs</a></li>
+<li><a href="#/slide-org66a8705">2.0.2. Org-Mode</a></li>
+<li><a href="#/slide-org011b0b6">2.0.3. Org-Agenda</a></li>
+<li><a href="#/slide-org6bc71b7">2.0.4. Org-Drill</a></li>
+<li><a href="#/slide-org2c47b68">2.0.5. Org-Reveal</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#/slide-org2eae3f2">3. Org-Agenda</a>
+<ul>
+<li><a href="#/slide-org96c9e90">3.1. Integrating google calendar</a></li>
+</ul>
+</li>
+<li><a href="#/slide-orgea29af9">4. Org-Drill</a></li>
+<li><a href="#/slide-orge9562df">5. Org-Reveal</a></li>
+<li><a href="#/slide-org4145f6a">6. Time to try it</a>
+<ul>
+<li><a href="#/slide-org59d9f8e">6.1. Installing Spacemacs</a>
+<ul>
+<li><a href="#/slide-orgadc34be">6.1.1. Useful links</a></li>
+<li><a href="#/slide-orgec0b805">6.1.2. On Linux</a></li>
+<li><a href="#/slide-orge04353e">6.1.3. On MacOS (OS X)</a></li>
+<li><a href="#/slide-orgf9230b1">6.1.4. On Windows</a></li>
+</ul>
+</li>
+<li><a href="#/slide-orgcfba414">6.2. Creating your first Org file</a></li>
+<li><a href="#/slide-org9a86ad6">6.3. Using Org-Agenda</a></li>
+<li><a href="#/slide-org6a98c9a">6.4. Using Org-Drill</a>
+<ul>
+<li><a href="#/slide-org1eb8b2a">6.4.1. Install</a></li>
+<li><a href="#/slide-orgd974c78">6.4.2. Usage Example Format</a></li>
+</ul>
+</li>
+<li><a href="#/slide-org6fdcf51">6.5. Using Org-Reveal</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<section>
+<section id="slide-org66331da">
+<h2 id="org66331da"><span class="section-number-2">1</span> Organize Yourself with Org-Mode</h2>
+<blockquote nil>
+<p>
+Due to the way Org works, TODO items, time-stamped items, and tagged headlines can be scattered throughout a file or even a number of files. To get an overview of open action items, or of events that are important for a particular date, this information must be collected, sorted and displayed in an organized way.  - orgmode.org
+</p>
+</blockquote>
+
+
+</section>
+</section>
+<section>
+<section id="slide-orgca4236e">
+<h2 id="orgca4236e"><span class="section-number-2">2</span> Quick Introduction to used Tools</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+</section>
+<section id="slide-org68c3d28">
+<h4 id="org68c3d28"><span class="section-number-4">2.0.1</span> Emacs</h4>
+<blockquote nil>
+<p>
+An extensible, customizable, free/libre text editor — and more.
+</p>
+</blockquote>
+
+
+</section>
+<section id="slide-org66a8705">
+<h4 id="org66a8705"><span class="section-number-4">2.0.2</span> Org-Mode</h4>
+<blockquote nil>
+<p>
+Org-mode is a document editing, formatting, and organizing mode, designed for notes, planning, and authoring within Emacs.
+</p>
+</blockquote>
+
+<p>
+<a href="https://youtu.be/SzA2YODtgK4?t=109">https://youtu.be/SzA2YODtgK4?t=109</a>
+</p>
+
+
+</section>
+<section id="slide-org011b0b6">
+<h4 id="org011b0b6"><span class="section-number-4">2.0.3</span> Org-Agenda</h4>
+<blockquote nil>
+<p>
+The agenda view scans your .org files (set by customizing  org-agenda-files variable) and collects all of the headings with a TODO (or related) keyword. &#x2026; The agenda provides a convenient way of tracking your projects and managing your calendar.
+</p>
+</blockquote>
+
+
+</section>
+<section id="slide-org6bc71b7">
+<h4 id="org6bc71b7"><span class="section-number-4">2.0.4</span> Org-Drill</h4>
+<p>
+<a href="https://orgmode.org/worg/org-contrib/org-drill.html">https://orgmode.org/worg/org-contrib/org-drill.html</a>
+</p>
+
+<blockquote nil>
+<p>
+Org-Drill is an extension for Org mode. Org-Drill uses a spaced repetition algorithm to conduct interactive "drill sessions", using org files as sources of facts to be memorised. Each topic is treated as a "flash card". The material to be remembered is presented to the student in random order. The student rates his or her recall of each item, and this information is used to schedule the item for later revision.
+</p>
+</blockquote>
+
+
+</section>
+<section id="slide-org2c47b68">
+<h4 id="org2c47b68"><span class="section-number-4">2.0.5</span> Org-Reveal</h4>
+<blockquote nil>
+<p>
+reveal.js is a tool for creating good-looking HTML presentations
+</p>
+</blockquote>
+
+<blockquote nil>
+<p>
+Org-Reveal exports your Org documents to reveal.js presentations.
+</p>
+</blockquote>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org2eae3f2">
+<h2 id="org2eae3f2"><span class="section-number-2">3</span> Org-Agenda</h2>
+<p>
+Comes pre-install but without any shortcuts (key bindings) set cause needs some configurations to set up.
+</p>
+
+<p>
+<b>Lets try it</b>
+</p>
+
+</section>
+<section id="slide-org96c9e90">
+<h3 id="org96c9e90"><span class="section-number-3">3.1</span> Integrating google calendar</h3>
+<p>
+<a href="https://cestlaz.github.io/posts/using-emacs-26-gcal/">https://cestlaz.github.io/posts/using-emacs-26-gcal/</a>
+</p>
+
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp"><span style="color: #999999; font-style: italic;">;; </span><span style="color: #999999; font-style: italic;">Syncing google calender with org-gcal package</span>
+<span style="color: #999999; font-style: italic;">;; </span><span style="color: #999999; font-style: italic;">This goes in to your configuration file</span>
+
+<span style="color: #cccccc;">(</span><span style="color: #99cc99;">setq</span> package-check-signature nil<span style="color: #cccccc;">)</span>
+
+<span style="color: #cccccc;">(</span><span style="color: #99cc99;">use-package</span> <span style="color: #6699cc;">org-gcal</span>
+<span style="color: #cc99cc;">:ensure</span> t
+<span style="color: #cc99cc;">:config</span>
+<span style="color: #66cccc;">(</span><span style="color: #99cc99;">setq</span> org-gcal-client-id <span style="color: #66cccc;">"&lt;your_client_id&gt;"</span>
+org-gcal-client-secret <span style="color: #66cccc;">"&lt;your_gcal_secret&gt;"</span>
+org-gcal-file-alist '<span style="color: #ffcc66;">(</span><span style="color: #99cc99;">(</span><span style="color: #66cccc;">"&lt;your_email&gt;"</span> .  <span style="color: #66cccc;">"~/lnu/emacs/gcal.org"</span><span style="color: #99cc99;">)</span><span style="color: #ffcc66;">)</span><span style="color: #66cccc;">)</span><span style="color: #cccccc;">)</span>
+
+<span style="color: #cccccc;">(</span>add-hook 'org-agenda-mode-hook <span style="color: #66cccc;">(</span><span style="color: #99cc99;">lambda</span> <span style="color: #ffcc66;">()</span> <span style="color: #ffcc66;">(</span>org-gcal-sync<span style="color: #ffcc66;">)</span> <span style="color: #66cccc;">)</span><span style="color: #cccccc;">)</span>
+
+<span style="color: #cccccc;">(</span>add-hook 'org-capture-after-finalize-hook <span style="color: #66cccc;">(</span><span style="color: #99cc99;">lambda</span> <span style="color: #ffcc66;">()</span> <span style="color: #ffcc66;">(</span>org-gcal-sync<span style="color: #ffcc66;">)</span> <span style="color: #66cccc;">)</span><span style="color: #cccccc;">)</span>
+
+<span style="color: #cccccc;">(</span><span style="color: #99cc99;">defun</span> <span style="color: #f99157;">org-current-is-todo</span> <span style="color: #66cccc;">()</span>
+  <span style="color: #66cccc;">(</span>string= <span style="color: #66cccc;">"TODO"</span> <span style="color: #ffcc66;">(</span>org-get-todo-state<span style="color: #ffcc66;">)</span><span style="color: #66cccc;">)</span><span style="color: #cccccc;">)</span>
+
+<span style="color: #999999; font-style: italic;">;; </span><span style="color: #999999; font-style: italic;">Setting key bindings</span>
+<span style="color: #cccccc;">(</span>global-set-key <span style="color: #66cccc;">"\C-ca"</span> 'org-agenda<span style="color: #cccccc;">)</span>
+<span style="color: #cccccc;">(</span>global-set-key <span style="color: #66cccc;">"\C-cc"</span> 'org-capture<span style="color: #cccccc;">)</span>
+
+
+<span style="color: #999999; font-style: italic;">;; </span><span style="color: #999999; font-style: italic;">*Archiving done TODOs*</span>
+#+BEGIN_SRC emacs-lisp
+  <span style="color: #cccccc;">(</span><span style="color: #99cc99;">defun</span> <span style="color: #f99157;">my-org-archive-done-tasks</span> <span style="color: #66cccc;">()</span>
+  <span style="color: #66cccc;">(</span><span style="color: #99cc99;">interactive</span><span style="color: #66cccc;">)</span>
+  <span style="color: #66cccc;">(</span>org-map-entries 'org-archive-subtree <span style="color: #66cccc;">"/DONE"</span> 'file<span style="color: #66cccc;">)</span><span style="color: #cccccc;">)</span>
+  <span style="color: #999999; font-style: italic;">;; </span><span style="color: #999999; font-style: italic;">Key is already in use</span>
+  <span style="color: #999999; font-style: italic;">;;</span><span style="color: #999999; font-style: italic;">(global-set-key (kbd "C-c C-A") 'my-org-archive-done-tasks)</span>
+</pre>
+</div>
+
+
+</section>
+</section>
+<section>
+<section id="slide-orgea29af9">
+<h2 id="orgea29af9"><span class="section-number-2">4</span> Org-Drill</h2>
+<p>
+<b>Lets try it</b> by creating a new org file
+</p>
+
+
+</section>
+</section>
+<section>
+<section id="slide-orge9562df">
+<h2 id="orge9562df"><span class="section-number-2">5</span> Org-Reveal</h2>
+<p>
+This presentation was written in org-mode -&gt; exported to reveal.js
+<b>Let's check it out</b>
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-org4145f6a">
+<h2 id="org4145f6a"><span class="section-number-2">6</span> Time to try it</h2>
+<p>
+everybody  willing can install and try org-mode with spacemacs "emacs made simple".
+</p>
+
+</section>
+<section id="slide-org59d9f8e">
+<h3 id="org59d9f8e"><span class="section-number-3">6.1</span> Installing Spacemacs</h3>
+<p>
+It's just a set of packages and configurations added to Emacs. So you don't have to spend weeks/months to configure.
+</p>
+<blockquote nil>
+<p>
+A community-driven Emacs distribution The best editor is neither Emacs nor Vim, it's Emacs and Vim!
+</p>
+</blockquote>
+
+</section>
+<section id="slide-orgadc34be">
+<h4 id="orgadc34be"><span class="section-number-4">6.1.1</span> Useful links</h4>
+<p>
+<a href="http://spacemacs.org/doc/QUICK_START.html">http://spacemacs.org/doc/QUICK_START.html</a>
+<a href="https://www.christopherhoelter.com/post/spacemacs-windows-setup/">https://www.christopherhoelter.com/post/spacemacs-windows-setup/</a>
+<a href="https://www.7-zip.org/">https://www.7-zip.org/</a>
+<a href="https://www.techjunkie.com/environment-variables-windows-10/">https://www.techjunkie.com/environment-variables-windows-10/</a>
+</p>
+
+<p>
+<a href="https://orgmode.org/manual/Agenda-commands.html">https://orgmode.org/manual/Agenda-commands.html</a>
+</p>
+
+
+</section>
+<section id="slide-orgec0b805">
+<h4 id="orgec0b805"><span class="section-number-4">6.1.2</span> On Linux</h4>
+<p>
+It is recommended to use your distro's pkg manager.
+<a href="https://www.gnu.org/software/emacs/download.html#gnu-linux">https://www.gnu.org/software/emacs/download.html#gnu-linux</a>
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-sh"><span style="color: #999999; font-style: italic;"># </span><span style="color: #999999; font-style: italic;">1. Install Emacs on Debian/Ubuntu (Linux)</span>
+$ apt install emacs
+<span style="color: #999999; font-style: italic;"># </span><span style="color: #999999; font-style: italic;">1. Install Emacs on Arch/Antergos (Linux)</span>
+$ pacman -Sy emacs
+<span style="color: #999999; font-style: italic;"># </span><span style="color: #999999; font-style: italic;">2. Install Spacemacs</span>
+$ git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+</pre>
+</div>
+
+
+</section>
+<section id="slide-orge04353e">
+<h4 id="orge04353e"><span class="section-number-4">6.1.3</span> On MacOS (OS X)</h4>
+<p>
+Brew is lovely, have a sip.
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-sh"><span style="color: #999999; font-style: italic;"># </span><span style="color: #999999; font-style: italic;">1. Install Emacs</span>
+$ brew install emacs --with-cocoa
+<span style="color: #999999; font-style: italic;"># </span><span style="color: #999999; font-style: italic;">2. Install Spacemacs</span>
+$ git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+</pre>
+</div>
+
+
+</section>
+<section id="slide-orgf9230b1">
+<h4 id="orgf9230b1"><span class="section-number-4">6.1.4</span> On Windows</h4>
+<p>
+Yes, now even for windows \o/ ! ! !
+</p>
+<ol>
+<li>Download &amp; extract files <a href="https://sourceforge.net/projects/emacsbinw64/">https://sourceforge.net/projects/emacsbinw64/</a></li>
+<li>Open the folder then -&gt; bin/emacs.exe</li>
+
+</ol>
+<p>
+3a. If you have git installed, you can right-click -&gt; Select "Open Bash Here", then download spacemacs with&#x2026;
+</p>
+<pre  class="example">
+$ git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d  
+</pre>
+<p>
+3b. <a href="https://www.spacemacs.org">https://www.spacemacs.org</a> -&gt; click "Download" -&gt; open the zip file and extract the content in C:\Users\&lt;USERNAME&gt;\AppData\Roaming\.emacs.d\
+</p>
+
+</section>
+<section id="slide-orgcfba414">
+<h3 id="orgcfba414"><span class="section-number-3">6.2</span> Creating your first Org file</h3>
+<ol>
+<li>Start Emacs (Spacemacs will start if properly installed)</li>
+<li>Ctrl+x Ctrl+f -&gt; filename.org -&gt; Enter</li>
+<li>Now you try out some things you've seen org-mode can do -&gt; <a href="https://youtu.be/SzA2YODtgK4?t=109">video</a></li>
+
+</ol>
+
+</section>
+<section id="slide-org9a86ad6">
+<h3 id="org9a86ad6"><span class="section-number-3">6.3</span> Using Org-Agenda</h3>
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp"><span style="color: #999999; font-style: italic;">;; </span><span style="color: #999999; font-style: italic;">Open configuration file with "Alt+m f e d" or "Space f e d"</span>
+<span style="color: #999999; font-style: italic;">;; </span><span style="color: #999999; font-style: italic;">Paste this code in the dotspacemacs/user-init function</span>
+<span style="color: #cccccc;">(</span><span style="color: #99cc99;">setq</span> org-agenda-files '<span style="color: #66cccc;">(</span><span style="color: #66cccc;">"~/my_agenda.org"</span><span style="color: #66cccc;">)</span><span style="color: #cccccc;">)</span>
+<span style="color: #cccccc;">(</span>global-set-key <span style="color: #66cccc;">(</span>kbd <span style="color: #66cccc;">"C-ca"</span><span style="color: #66cccc;">)</span> 'org-agenda<span style="color: #cccccc;">)</span>
+</pre>
+</div>
+
+<p>
+Here is a very good guide -&gt; <a href="https://www.youtube.com/watch?v=--J-ns3c3cw">tutorial video</a>
+</p>
+<ol>
+<li>Create an org file (example.org)</li>
+<li>Shift+Alt+Enter -&gt; Create a TODO item/header</li>
+<li>Ctrl+c Ctrl+s -&gt; select date/time</li>
+<li>Ctrl+c a</li>
+
+</ol>
+
+</section>
+<section id="slide-org6a98c9a">
+<h3 id="org6a98c9a"><span class="section-number-3">6.4</span> Using Org-Drill</h3>
+<div class="outline-text-3" id="text-6-4">
+</div>
+</section>
+<section id="slide-org1eb8b2a">
+<h4 id="org1eb8b2a"><span class="section-number-4">6.4.1</span> Install</h4>
+<ol>
+<li>Press C-h v</li>
+<li>Describe variable: org-modules</li>
+<li>Press RET.</li>
+<li>In help buffer, move pointer down to "customize" link and enter/click</li>
+<li>Scroll down and check "C drill:"</li>
+<li>Scroll up and click "Apply and Save" button.</li>
+
+</ol>
+
+
+</section>
+<section id="slide-orgd974c78">
+<h4 id="orgd974c78"><span class="section-number-4">6.4.2</span> Usage Example Format</h4>
+<ol>
+<li>A drill flashcard is created in an org file with a header that is tagget "drill"</li>
+<li>To tag: Move pointer to header -&gt; Press Ctrl+c Ctrl+q -&gt; type drill -&gt; hit enter</li>
+<li>Create a question</li>
+<li>To start: Alt+x -&gt; type org-drill-cram</li>
+<li>Look at bottom of program for guidance</li>
+
+</ol>
+
+<p>
+The headers can have what ever name you want! More advanced "cards" exists,  -&gt; <a href="https://orgmode.org/worg/org-contrib/org-drill.html">check them out here</a>
+</p>
+
+<p>
+<b>Example 1</b>
+</p>
+
+<p>
+<b>Example 2</b>
+</p>
+
+</section>
+<section id="slide-org6fdcf51">
+<h3 id="org6fdcf51"><span class="section-number-3">6.5</span> Using Org-Reveal</h3>
+<p>
+Follow <a href="https://github.com/yjwen/org-reveal/blob/master/Readme.org">this link</a> to install reveal.js and org-reveal (ox-reveal) 
+</p>
+</section>
+</section>
+</div>
+</div>
+<script src="file:///home/megamos/projects/cloned/reveal.js/lib/js/head.min.js"></script>
+<script src="file:///home/megamos/projects/cloned/reveal.js/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+overview: true,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'file:///home/megamos/projects/cloned/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+ { src: 'file:///home/megamos/projects/cloned/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'file:///home/megamos/projects/cloned/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'file:///home/megamos/projects/cloned/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: 'file:///home/megamos/projects/cloned/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+});
+</script>
+</body>
+</html>

@@ -87,11 +87,12 @@ org-gcal-file-alist '(("<your_email>" .  "~/lnu/emacs/gcal.org"))))
 
 
 * Org-Drill
-*Lets try it*
+*Lets try it* by creating a new org file
 
 
 * Org-Reveal
 This presentation was written in org-mode -> exported to reveal.js
+*Let's check it out*
 
 * Time to try it
 everybody  willing can install and try org-mode with spacemacs "emacs made simple".
@@ -143,7 +144,6 @@ Yes, now even for windows \o/ ! ! !
   $ git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d  
   #+END_SRC
   3b. [[https://www.spacemacs.org]] -> click "Download" -> open the zip file and extract the content in C:\Users\<USERNAME>\AppData\Roaming\.emacs.d\
-
 
 ** Creating your first Org file
    1. Start Emacs (Spacemacs will start if properly installed)
