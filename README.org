@@ -1,0 +1,202 @@
+* Organize Yourself with Org-Mode
+#+BEGIN_QUOTE
+Due to the way Org works, TODO items, time-stamped items, and tagged headlines can be scattered throughout a file or even a number of files. To get an overview of open action items, or of events that are important for a particular date, this information must be collected, sorted and displayed in an organized way.  - orgmode.org
+#+END_QUOTE
+
+
+* Quick Introduction to used Tools
+*** Emacs
+#+BEGIN_QUOTE
+An extensible, customizable, free/libre text editor — and more.
+#+END_QUOTE
+
+
+*** Org-Mode
+#+BEGIN_QUOTE 
+Org-mode is a document editing, formatting, and organizing mode, designed for notes, planning, and authoring within Emacs.
+#+END_QUOTE
+
+https://youtu.be/SzA2YODtgK4?t=109
+
+
+*** Org-Agenda
+#+BEGIN_QUOTE
+The agenda view scans your .org files (set by customizing  org-agenda-files variable) and collects all of the headings with a TODO (or related) keyword. ... The agenda provides a convenient way of tracking your projects and managing your calendar.
+#+END_QUOTE
+
+
+*** Org-Drill
+https://orgmode.org/worg/org-contrib/org-drill.html
+
+#+BEGIN_QUOTE
+Org-Drill is an extension for Org mode. Org-Drill uses a spaced repetition algorithm to conduct interactive "drill sessions", using org files as sources of facts to be memorised. Each topic is treated as a "flash card". The material to be remembered is presented to the student in random order. The student rates his or her recall of each item, and this information is used to schedule the item for later revision.
+#+END_QUOTE
+
+
+*** Org-Reveal
+#+BEGIN_QUOTE
+reveal.js is a tool for creating good-looking HTML presentations
+#+END_QUOTE
+
+#+BEGIN_QUOTE
+Org-Reveal exports your Org documents to reveal.js presentations.
+#+END_QUOTE
+
+
+* Org-Agenda
+Comes pre-install but without any shortcuts (key bindings) set cause needs some configurations to set up.
+
+*Lets try it*
+
+** Integrating google calendar
+https://cestlaz.github.io/posts/using-emacs-26-gcal/
+
+#+BEGIN_SRC emacs-lisp
+;; Syncing google calender with org-gcal package
+;; This goes in to your configuration file
+
+(setq package-check-signature nil)
+
+(use-package org-gcal
+:ensure t
+:config
+(setq org-gcal-client-id "<your_client_id>"
+org-gcal-client-secret "<your_gcal_secret>"
+org-gcal-file-alist '(("<your_email>" .  "~/lnu/emacs/gcal.org"))))
+
+(add-hook 'org-agenda-mode-hook (lambda () (org-gcal-sync) ))
+
+(add-hook 'org-capture-after-finalize-hook (lambda () (org-gcal-sync) ))
+
+(defun org-current-is-todo ()
+  (string= "TODO" (org-get-todo-state)))
+
+;; Setting key bindings
+(global-set-key "\C-ca" 'org-agenda)
+(global-set-key "\C-cc" 'org-capture)
+
+
+;; *Archiving done TODOs*
+#+BEGIN_SRC emacs-lisp
+  (defun my-org-archive-done-tasks ()
+  (interactive)
+  (org-map-entries 'org-archive-subtree "/DONE" 'file))
+  ;; Key is already in use
+  ;;(global-set-key (kbd "C-c C-A") 'my-org-archive-done-tasks)
+#+END_SRC
+
+
+* Org-Drill
+*Lets try it*
+
+
+* Org-Reveal
+This presentation was written in org-mode -> exported to reveal.js
+
+* Time to try it
+everybody  willing can install and try org-mode with spacemacs "emacs made simple".
+
+** Installing Spacemacs
+It's just a set of packages and configurations added to Emacs. So you don't have to spend weeks/months to configure.
+#+BEGIN_QUOTE
+A community-driven Emacs distribution The best editor is neither Emacs nor Vim, it's Emacs and Vim!
+#+END_QUOTE
+
+*** Useful links
+http://spacemacs.org/doc/QUICK_START.html
+https://www.christopherhoelter.com/post/spacemacs-windows-setup/
+https://www.7-zip.org/
+https://www.techjunkie.com/environment-variables-windows-10/
+
+https://orgmode.org/manual/Agenda-commands.html
+
+
+*** On Linux
+It is recommended to use your distro's pkg manager.
+https://www.gnu.org/software/emacs/download.html#gnu-linux
+      #+BEGIN_SRC sh
+      # 1. Install Emacs on Debian/Ubuntu (Linux)
+      $ apt install emacs
+      # 1. Install Emacs on Arch/Antergos (Linux)
+      $ pacman -Sy emacs
+      # 2. Install Spacemacs
+      $ git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+      #+END_SRC
+
+
+*** On MacOS (OS X)
+Brew is lovely, have a sip.
+#+BEGIN_SRC sh
+# 1. Install Emacs
+$ brew install emacs --with-cocoa
+# 2. Install Spacemacs
+$ git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+#+END_SRC
+
+
+*** On Windows
+Yes, now even for windows \o/ ! ! !
+  1. Download & extract files https://sourceforge.net/projects/emacsbinw64/
+  2. Open the folder then -> bin/emacs.exe
+  3a. If you have git installed, you can right-click -> Select "Open Bash Here", then download spacemacs with...
+  #+BEGIN_SRC 
+  $ git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d  
+  #+END_SRC
+  3b. [[https://www.spacemacs.org]] -> click "Download" -> open the zip file and extract the content in C:\Users\<USERNAME>\AppData\Roaming\.emacs.d\
+
+
+** Creating your first Org file
+   1. Start Emacs (Spacemacs will start if properly installed)
+   2. Ctrl+x Ctrl+f -> filename.org -> Enter
+   3. Now you try out some things you've seen org-mode can do -> [[https://youtu.be/SzA2YODtgK4?t=109][video]]
+
+** Using Org-Agenda
+#+BEGIN_SRC emacs-lisp
+;; Open configuration file with "Alt+m f e d" or "Space f e d"
+;; Paste this code in the dotspacemacs/user-init function
+(setq org-agenda-files '("~/my_agenda.org"))
+(global-set-key (kbd "C-ca") 'org-agenda)
+#+END_SRC
+
+Here is a very good guide -> [[https://www.youtube.com/watch?v=--J-ns3c3cw][tutorial video]]
+   1. Create an org file (example.org)
+   2. Shift+Alt+Enter -> Create a TODO item/header
+   3. Ctrl+c Ctrl+s -> select date/time
+   4. Ctrl+c a
+
+** Using Org-Drill
+*** Install
+   1. Press C-h v
+   2. Describe variable: org-modules
+   3. Press RET.
+   4. In help buffer, move pointer down to "customize" link and enter/click
+   5. Scroll down and check "C drill:"
+   6. Scroll up and click "Apply and Save" button.
+
+
+*** Usage Example Format
+    1. A drill flashcard is created in an org file with a header that is tagget "drill" 
+    2. To tag: Move pointer to header -> Press Ctrl+c Ctrl+q -> type drill -> hit enter
+    3. Create a question
+    4. To start: Alt+x -> type org-drill-cram
+    5. Look at bottom of program for guidance
+
+The headers can have what ever name you want! More advanced "cards" exists,  -> [[https://orgmode.org/worg/org-contrib/org-drill.html][check them out here]]
+
+*Example 1*
+# * Question      :drill:
+#   What is 2+2?
+# **** Answer
+#   4
+
+*Example 2*
+# * Another Question      :drill:
+#   2+2 = [4]
+
+** Using Org-Reveal
+Follow [[https://github.com/yjwen/org-reveal/blob/master/Readme.org][this link]] to install reveal.js and org-reveal (ox-reveal) 
+
+
+
+
+
